@@ -1,6 +1,19 @@
 from django.db import models
+from random import choice
 import uuid
-from django.core.management.utils import get_random_secret_key
+import string
+
+senha = ''
+tamanho_senha = 10
+caracteres = string.ascii_letters + string.digits + string.punctuation
+  
+def gerar_senha(senha, tamanho_senha, caracteres):
+  for i in range(tamanho_senha):
+    senha += choice(caracteres)
+    
+  return senha
+  
+default_key = gerar_senha(senha, tamanho_senha, caracteres)
 
 class Usuarios(models.Model):
   
@@ -14,12 +27,13 @@ class Usuarios(models.Model):
     max_length=8,
     null=False,
     blank=False,
+    unique=True,
   )
   senha = models.CharField(
-    max_length=50,
+    max_length=15,
+    default=default_key,
     null=False,
     blank=True,
-    default=get_random_secret_key,
   )
   data_nascimento = models.DateField(
     null=False,
