@@ -67,7 +67,7 @@ Para acessá-lo e realizar as alterações pretendidas basta substituir o {looku
 
 ## Considerações finais
 
-Este foi o meu contato com Python, não consegui definir a senha gerada automaticamente como default para o campo de senha do usuário no arquivo models.py
+Este foi o meu primeiro contato com Python, não consegui definir a senha gerada automaticamente como default para o campo de senha do usuário no arquivo models.py
 
 Não sei dizer se o tipo da model tem que ser diferente do tipo CharField, se a função de gerar senha tem que ser declarada em outro arquivo e importada ou se tem algum outro motivo.
 
